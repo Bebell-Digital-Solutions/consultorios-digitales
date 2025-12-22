@@ -24,6 +24,55 @@
 
 
 
+
+<!-- APP & FAVICON ICONS -->
+<script> function removeFromLinks(rel) {
+for (link of document.head.getElementsByTagName("link")) {
+if (link.rel == rel) {
+document.head.removeChild(link);
+}
+};
+}
+function createNewFavicon(rel, img) {
+var newFavicon = document.createElement("link");
+newFavicon.type = "image/png";
+newFavicon.rel = rel;
+newFavicon.href = img;
+var firstHeadElement = document.head.firstChild;
+document.head.insertBefore(newFavicon, firstHeadElement);
+}
+removeFromLinks("icon");
+removeFromLinks("shortcut icon");
+removeFromLinks("apple-touch-icon");
+createNewFavicon("icon", "https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png");
+createNewFavicon("shortcut icon", "https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png");
+createNewFavicon("apple-touch-icon", "https://bucket.mlcdn.com/a/3336/3336910/images/eebc62809be08cbd0454502bcc89c8ff5e667a34.png"); </script>
+<!-- APP & FAVICON ICONS -->
+
+
+    
+
+<!-- ADD CHANGING TEXT NEXT TO FAVICON -->
+<script>
+document.addEventListener('visibilitychange', function() {
+    let originalTitle = document.title;
+    let interval;
+    if (document.hidden) {
+        let messages = ['Tienes Una Cita', 'Con Tu Dentista 🦷'];
+        let messageIndex = 0;
+        interval = setInterval(function() {
+            document.title = messages[messageIndex];
+            messageIndex = (messageIndex + 1) % messages.length;
+        }, 100);
+    } else {
+        clearInterval(interval);
+        document.title = originalTitle;
+    }
+});
+</script>
+<!-- ADD CHANGING TEXT NEXT TO FAVICON -->
+
+
     <style>
         body { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
         
@@ -154,6 +203,159 @@
             top: 0;
         }
     </style>
+
+<script async defer src='https://app.visitortracking.com/assets/js/tracer.js'></script>
+<script>
+function init_tracer() { 
+   var tracer = new Tracer({  
+   websiteId : "0d605794-448c-4944-8339-6604fcfe9b40",  
+   async : true, 
+   debug : false }); 
+ } 
+ </script>
+
+
+
+<!-- Widget BACK-TO-TOP -->
+<script>
+// Create Back-to-Top Button Dynamically
+document.addEventListener("DOMContentLoaded", function () {
+    // Create the button container
+    const backToTop = document.createElement("div");
+    backToTop.id = "back-to-top";
+    backToTop.style.position = "fixed";
+    backToTop.style.bottom = "20px";
+    backToTop.style.right = "20px";
+    backToTop.style.display = "none";
+    backToTop.style.cursor = "pointer";
+    backToTop.style.zIndex = "9999";
+
+    // Create the image inside the button
+    const backToTopImg = document.createElement("img");
+    backToTopImg.src = "https://bucket.mlcdn.com/a/3336/3336910/images/be319a4361655f3df43132e2cb167f2157629763.png";
+    backToTopImg.alt = "Volver arriba";
+    backToTopImg.style.width = "40px";
+    backToTopImg.style.height = "40px";
+
+    // Append image to the button
+    backToTop.appendChild(backToTopImg);
+
+    // Append button to the body
+    document.body.appendChild(backToTop);
+
+    // Scroll Event Listener
+    window.addEventListener("scroll", function () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTop.style.display = "block";
+        } else {
+            backToTop.style.display = "none";
+        }
+    });
+
+    // Click Event for Scrolling to Top
+    backToTop.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+<!-- End Widget BACK-TO-TOP -->
+
+
+
+<!-- Page Loading Effect -->
+<style>
+  .page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+  }
+
+  .progress {
+    width: 71.6px;
+    height: 71.6px;
+    background: linear-gradient(#1a9ea2 0 0) bottom/100% 0% no-repeat #d1f0f1; /* Changed to lighter teal #d1f0f1 */
+    -webkit-mask: 
+      radial-gradient(circle at 60% 65%, #000 62%, #0000 65%) top left/50% 50%, 
+      radial-gradient(circle at 40% 65%, #000 62%, #0000 65%) top right/50% 50%, 
+      linear-gradient(to bottom left, #000 42%, #0000 43%) bottom left/50% 50%, 
+      linear-gradient(to bottom right, #000 42%, #0000 43%) bottom right/50% 50%;
+    mask: 
+      radial-gradient(circle at 60% 65%, #000 62%, #0000 65%) top left/50% 50%, 
+      radial-gradient(circle at 40% 65%, #000 62%, #0000 65%) top right/50% 50%, 
+      linear-gradient(to bottom left, #000 42%, #0000 43%) bottom left/50% 50%, 
+      linear-gradient(to bottom right, #000 42%, #0000 43%) bottom right/50% 50%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    animation: progress-ofy9at 2.8s infinite linear;
+  }
+
+  @keyframes progress-ofy9at {
+    90%, 100% { background-size: 100% 100%; }
+  }
+
+  .page-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .progress {
+      animation: none;
+      background-size: 100% 100% !important;
+    }
+  }
+</style>
+
+<noscript>
+  <style>.page-loader { display: none !important; }</style>
+</noscript>
+
+<script>
+  // Create loader element
+  const loader = document.createElement('div');
+  loader.className = 'page-loader';
+  loader.setAttribute('aria-busy', 'true');
+  loader.setAttribute('aria-label', 'Loading page');
+  loader.innerHTML = '<div class="progress" role="status"></div>';
+  document.body.appendChild(loader);
+
+  // Remove loader when page is loaded
+  const loadTimeout = setTimeout(() => {
+    hideLoader();
+  }, 5000); // Fallback timeout
+
+  window.addEventListener('load', function() {
+    clearTimeout(loadTimeout);
+    hideLoader();
+  });
+
+  function hideLoader() {
+    loader.setAttribute('aria-busy', 'false');
+    loader.classList.add('hidden');
+    setTimeout(() => {
+      loader.remove();
+      document.body.setAttribute('aria-live', 'polite');
+      document.body.insertAdjacentHTML('afterbegin', '<span class="sr-only">Page loading complete</span>');
+    }, 500);
+  }
+
+  // For screen readers (add to your CSS)
+  document.head.insertAdjacentHTML('beforeend', '<style>.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }</style>');
+</script>
+
+    
+    
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-800 overflow-x-hidden selection:bg-teal-100">
 
