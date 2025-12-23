@@ -24,6 +24,8 @@
 
 
 
+    
+
 
 <!-- APP & FAVICON ICONS -->
 <script> function removeFromLinks(rel) {
@@ -202,6 +204,34 @@ document.addEventListener('visibilitychange', function() {
             right: 0;
             top: 0;
         }
+
+
+/* Cross-browser scrollbar styling for the entire page */
+* {
+    scrollbar-width: thin; /* Firefox: makes the scrollbar thin */
+    scrollbar-color: #0d9488 #f0fdfa; /* Firefox: thumb color, track color */
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px; /* For horizontal scrollbars */
+}
+::-webkit-scrollbar-track {
+    background: #f0fdfa; /* Matches your teal-50 background */
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #0d9488; /* Matches your teal-600 */
+    border-radius: 5px;
+    border: 2px solid #f0fdfa; /* Creates spacing, matches track */
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #0f766e; /* A darker teal for hover */
+}
+
+
+        
     </style>
 
 <script async defer src='https://app.visitortracking.com/assets/js/tracer.js'></script>
