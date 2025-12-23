@@ -214,7 +214,7 @@ section.bg-white.py-16 {
 /* Target the specific iframe container to appear above blur */
 section.bg-white.py-16 > div > div {
     position: relative;
-    z-index: 0; /* Higher than background's z-index */
+    z-index: -10; /* Higher than background's z-index */
 }
 
 /* Or more specifically target the iframe itself */
@@ -814,7 +814,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 frameborder="0" 
                 scrolling="no" 
                 width="100%" 
-                height="380px"
+                height="300px"
                 style="border-radius: 12px;"
             ></iframe>
         </div>
